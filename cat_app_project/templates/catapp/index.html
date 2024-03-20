@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <div>
+        <img src="{% static 'images/cat.jpg' %}" alt="Picture of cat" />
+    </div>
+    <head>
+        <title>cat home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+     <h1>Students and their cats:</h1>
+    <ul>
+    {% for student in students %}
+        <li>
+            <p>{{ student.student_name }} has <b>{{student.cats.count}}</b>
+            {% if student.cats.count == 1 %} cat {% else %} cats {% endif %}</p>
+            {% if student.cats.all %}
+            <ul>
+                {% for cat in student.cats.all|dictsort:"name" %}
+                <li>{{ cat.name }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>This student doesn't own any cats.</p>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+<!--    <div>-->
+<!--        hey there partner! <br />-->
+<!--        <strong>{{ boldmessage }}</strong><br />-->
+<!--    </div>-->
+    <div>
+        <a href="/catapp/about/">About pets of students</a><br />
+    </div>
+    </body>
+</html>

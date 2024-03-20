@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <div>
+        <img src="{% static 'images/cats_with_fire.jpg' %}" alt="Picture of cats next to a fire" />
+    </div>
+    <h1>All Cats</h1>
+    <ul>
+        {% for cat in cats|dictsort:"name" %}
+        <li>{{ cat.name }}</li>
+        {% endfor %}
+    </ul>
+    <div>
+        <p>Number of cats: {{ cats.count }}</p>
+    </div>
+    <div>
+        <a href="/catapp/index/">click to go back to home</a><br />
+
+    </div>
+    </body>
+</html>
