@@ -9,12 +9,12 @@ django.setup()
 from catapp.models import Student, Cat
 
 def populate():
-    # Create some students
+
     student1 = Student.objects.create(student_first_name='Alice', student_last_name='Smith')
     student2 = Student.objects.create(student_first_name='Bob', student_last_name='Jones')
     student3 = Student.objects.create(student_first_name='Carol', student_last_name='Doe')
 
-    # Create cats for each student
+
     Cat.objects.create(name='Fluffy', owner=student1)
     Cat.objects.create(name='Spot', owner=student1)
     Cat.objects.create(name='Whiskers', owner=student2)
