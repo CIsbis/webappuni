@@ -1,11 +1,10 @@
 import os
 import django
 
-# Set up Django environment
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cat_app_project.settings')
 django.setup()
 
-# Import your models
 from catapp.models import Student, Cat
 
 def populate():
