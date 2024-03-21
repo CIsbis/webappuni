@@ -21,6 +21,6 @@ app_name = 'catapp'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
+    path('cats/', views.about, name='cats'),
     path('index/', views.index, name='index'),
 ]
